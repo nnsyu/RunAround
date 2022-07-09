@@ -22,8 +22,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
-import net.daum.mf.map.api.MapPoint;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -39,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG, getKeyHash(this));
 
         while (!isGranted) {
             isGranted = checkPermission();
